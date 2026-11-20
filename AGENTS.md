@@ -62,3 +62,16 @@ Cite sources whenever possible; otherwise leave this line blank.
 - **Heading:** `<prompt>` with its `#tags` and `[[wikilinks]]` removed and any leftover spaces tidied. Join a multi-line prompt into one line.
 - **Tag and link lines:** the removed tags on one line, then the removed wikilinks on the next, space-separated and in prompt order, directly under the heading with no blank line. Leave out a line that would be empty.
 - **`---`:** keep the blank line before it. Without it, Obsidian turns the line above into a heading.
+
+##### `::<prefix>:summarize <text>`
+
+Summarizes `<text>` (usually pasted) and logs the summary as a new entry in the prefix's note, under a title you write.
+
+**Example:** `::log:summarize <pasted article> #weather [[Travel]]`
+
+**Behavior:** the same as `::<prefix> <prompt>`, except:
+- **Lookup:** `:summarize` is a mode, not part of the prefix. Look up `::<prefix>` alone (`::log:summarize` ➜ `::log`).
+- **Heading:** a concise title you write that captures what the text is about (a few words, like a note title), in place of `<prompt>`.
+- **Tag and link lines:** taken from `<text>` the same way they are taken from `<prompt>`.
+- **Response:** a concise summary of `<text>`. Don't copy the original text into the entry.
+- **Sources:** the text's origin (URL, author, publication) if it names one; otherwise blank.
